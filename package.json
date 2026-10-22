@@ -1,0 +1,24 @@
+{
+  "name": "crdt-collab",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "packages/protocol",
+    "packages/rga-crdt",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "test": "npm test -w packages/rga-crdt && npm test -w server",
+    "e2e:sync": "node e2e/sync-client.mjs",
+    "e2e:ui": "node e2e/ui.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "puppeteer-core": "^23.11.1"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@collab/rga-crdt",
+  "version": "0.1.0",
+  "description": "A from-scratch RGA sequence CRDT",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": { ".": "./src/index.js" },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "devDependencies": {
+    "fast-check": "^3.23.2"
+  }
+}
